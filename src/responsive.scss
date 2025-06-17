@@ -1,0 +1,25 @@
+
+// This file contains the responsive mixins for the project.
+
+// responsiveness for the mobile version
+@mixin mobile{
+    @media(max-width: 768px){
+        @content;
+    }
+}
+
+// responsiveness for the tablet version
+@mixin tablet{
+    @media(min-width: 769px) and (max-width: 1024px){
+        @content;
+    }
+}
+
+
+// responsiveness for the desktop version
+@mixin desktop{
+    @media(min-width: 1025px){
+        @content;
+    }
+}
+
