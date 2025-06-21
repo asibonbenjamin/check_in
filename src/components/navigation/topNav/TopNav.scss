@@ -1,0 +1,98 @@
+    @import '../../styles/variables';
+
+    .top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+        &__brand {
+            a {
+            color: $blue-primary;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+            }
+        }
+
+        &__links {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        &__link {
+            color: $text-dark;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 0;
+            position: relative;
+            transition: color 0.3s ease;
+
+            &:hover {
+            color: $blue-primary;
+            }
+
+            &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: $blue-primary;
+            transition: width 0.3s ease;
+            }
+
+            &:hover::after {
+            width: 100%;
+            }
+        }
+
+        &__button {
+            background-color: $blue-primary;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 0.5rem 1.25rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+
+            &:hover {
+            background-color: darken($blue-primary, 10%);
+            transform: translateY(-1px);
+            }
+
+            &--primary {
+            @extend .top-nav__button;
+            background-color: darken($blue-primary, 15%);
+            box-shadow: 0 2px 5px rgba($blue-primary, 0.3);
+            }
+        }
+    }
+
+    // Responsive styles
+        @media (max-width: 768px) {
+        .top-nav {
+            padding: 1rem;
+
+            &__links {
+            gap: 1rem;
+            }
+
+            &__link {
+            font-size: 0.9rem;
+            }
+
+            &__button {
+            padding: 0.4rem 1rem;
+            font-size: 0.9rem;
+            }
+        }
+    }   

@@ -1,0 +1,25 @@
+//importing responsive styles
+@use "../responsive.scss" as *;
+
+//  the layout styling parent code
+.layout{
+    height: 100vh;
+    width: 100vw;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+
+    @include mobile{
+        max-width: 738px;
+
+    }
+
+    @include tablet{
+        max-width: 1024px;
+    }
+
+    @include desktop{
+        min-width: 1024;
+
+    }
+}
